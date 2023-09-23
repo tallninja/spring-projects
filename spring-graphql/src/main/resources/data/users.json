@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Ernest Wambua",
+    "email": "ernestwambua2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 2,
+    "name": "Junn Hope",
+    "email": "junnhope2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 3,
+    "name": "Charles Obama",
+    "email": "charlesobama2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 4,
+    "name": "Arianna Mueni",
+    "email": "ariannamueni2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 5,
+    "name": "Carl Mungai",
+    "email": "carlmungai2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 6,
+    "name": "Gregory Mwangi",
+    "email": "gregorymwangi2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 7,
+    "name": "Sheila Ndunge",
+    "email": "sheilandunge2@gmail.com",
+    "phone": "+254719286396"
+  },
+  {
+    "id": 8,
+    "name": "George Leehaney",
+    "email": "georgeleehaney2@gmail.com",
+    "phone": "+254719286396"
+  }
+]
