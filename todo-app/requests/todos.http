@@ -1,0 +1,35 @@
+###
+
+GET {{baseUrl}}/todos
+
+###
+
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "TODO 5",
+  "description": "todo number one",
+  "user": {
+    "id": "84323276-2463-46d6-a1d4-a634651e676b"
+  }
+}
+
+###
+
+GET {{baseUrl}}/todos/84d2d0d5-a80d-4979-ac48-92ce292cc450
+
+###
+
+PUT {{baseUrl}}/todos/84d2d0d5-a80d-4979-ac48-92ce292cc450
+Content-Type: application/json
+
+{
+  "title": "TODO 5",
+  "description": "todo number one",
+  "done": true
+}
+
+###
+
+DELETE {{baseUrl}}/todos/84d2d0d5-a80d-4979-ac48-92ce292cc450

@@ -1,0 +1,34 @@
+###
+
+GET {{baseUrl}}/users
+
+###
+
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "firstName": "Ernest",
+  "lastName": "Wambua",
+  "email": "ernestwambua2@gmail.com",
+  "password": "password"
+}
+
+###
+
+GET {{baseUrl}}/users/5b516bb5-9204-492c-93a1-1b0833382652
+
+###
+
+PUT {{baseUrl}}/users/5b516bb5-9204-492c-93a1-1b0833382652
+Content-Type: application/json
+
+{
+  "firstName": "Tony",
+  "lastName": "Wambua",
+  "email": "ernestwambua2@gmail.com"
+}
+
+###
+
+DELETE {{baseUrl}}/users/5b516bb5-9204-492c-93a1-1b0833382652
