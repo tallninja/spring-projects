@@ -5,7 +5,6 @@
  */
 package com.tallninja.todoapp.mapper;
 
-import com.tallninja.todoapp.controller.graphql.input.user.CreateUserInput;
 import com.tallninja.todoapp.domain.User;
 import com.tallninja.todoapp.dto.user.CreateUserDto;
 import com.tallninja.todoapp.dto.user.GetUserDto;
