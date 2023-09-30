@@ -9,6 +9,7 @@ type Query {
     userByEmail(email: String!): User
     todos: [Todo]!
     todoById(id: ID!): Todo
+    notifications: [Notification]!
 }
 
 type Mutation {
@@ -39,6 +40,17 @@ type Todo {
     user: User!
     createdAt: String
     updatedAt: String
+}
+
+type Notification {
+    id: ID!
+    type: String!
+    date: String!
+    time: String!
+    message: String!
+    read: Boolean!
+    createdAt: String!
+    updatedAt: String!
 }
 
 input UserInput {

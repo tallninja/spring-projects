@@ -18,3 +18,7 @@ spring:
       enabled: true
     schema:
       file-extensions: '.gql'
+  artemis:
+    broker-url: 'tcp://localhost:61616'
+    user: 'admin'
+    password: 'admin'

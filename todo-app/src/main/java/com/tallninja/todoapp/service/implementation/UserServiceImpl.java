@@ -5,27 +5,32 @@
  */
 package com.tallninja.todoapp.service.implementation;
 
+import com.tallninja.todoapp.domain.NotificationType;
 import com.tallninja.todoapp.domain.User;
 import com.tallninja.todoapp.repository.UserRepository;
 import com.tallninja.todoapp.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import static com.tallninja.todoapp.misc.HelperMethods.createNotificationPayload;
+
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final JmsTemplate jmsTemplate;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, JmsTemplate jmsTemplate) {
         this.userRepository = userRepository;
+        this.jmsTemplate = jmsTemplate;
     }
 
     @Override
@@ -76,7 +81,12 @@ public class UserServiceImpl implements UserService {
             log.error(message);
             throw new Exception(message);
         }
-        return userRepository.save(user);
+        User newUser = userRepository.save(user);
+        jmsTemplate.convertAndSend("notifications", createNotificationPayload(
+                NotificationType.INFO,
+                "Created user %s".formatted(user.getEmail())
+        ));
+        return newUser;
     }
 
     @Override
