@@ -23,5 +23,5 @@ public interface TodoService {
     Todo findOneOrElseThrow(UUID id) throws Exception;
     Todo save(Todo todo) throws Exception;
     Todo update(UUID id, Todo todoData) throws Exception;
-    void delete(UUID id);
+    Optional<Todo> delete(UUID id);
 }

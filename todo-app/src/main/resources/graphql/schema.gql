@@ -1,0 +1,75 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    users: [User]!
+    userById(id: ID!): User
+    userByEmail(email: String!): User
+    todos: [Todo]!
+    todoById(id: ID!): Todo
+}
+
+type Mutation {
+    createUser(createUserInput: CreateUserInput!): User
+    updateUser(id: ID!, updateUserInput: UpdateUserInput!): User
+    deleteUser(id: ID!): User
+    createTodo(createTodoInput: CreateTodoInput!): Todo
+    updateTodo(id: ID!, updateTodoInput: UpdateTodoInput!): Todo
+    deleteTodo(id: ID!): Todo
+}
+
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    todos: [Todo]!
+    createdAt: String
+    updatedAt: String
+}
+
+type Todo {
+    id: ID!
+    title: String!
+    description: String
+    done: Boolean
+    user: User!
+    createdAt: String
+    updatedAt: String
+}
+
+input UserInput {
+    id: ID!
+}
+
+input CreateUserInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+
+input UpdateUserInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+}
+
+input TodoInput {
+    id: ID!
+}
+
+input CreateTodoInput {
+    title: String!
+    description: String
+    user: UserInput!
+}
+
+input UpdateTodoInput {
+    title: String!
+    description: String
+    done: Boolean
+}

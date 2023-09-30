@@ -82,7 +82,9 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public void delete(UUID id) {
-        todoRepository.deleteById(id);
+    public Optional<Todo> delete(UUID id) {
+        Optional<Todo> todo = findOne(id);
+        todo.ifPresent(todoRepository::delete);
+        return todo;
     }
 }

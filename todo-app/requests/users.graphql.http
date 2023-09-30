@@ -1,0 +1,7 @@
+### Get GraphQL schema
+// Server works with the following GraphQL schema
+GET {{baseUrl}}/graphql
+
+### GET Users
+// Get all the users
+GRAPHQL {{baseUrl}}/graphql

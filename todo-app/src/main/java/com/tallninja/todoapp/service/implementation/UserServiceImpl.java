@@ -90,7 +90,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(UUID id) {
-        userRepository.deleteById(id);
+    public Optional<User> delete(UUID id) {
+        Optional<User> user = findOne(id);
+        user.ifPresent(userRepository::delete);
+        return user;
     }
 }

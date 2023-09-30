@@ -22,5 +22,5 @@ public interface UserService {
     User findOneOrElseThrow(String email) throws Exception;
     User save(User user) throws Exception;
     User update(UUID id, User userData) throws Exception;
-    void delete(UUID id);
+    Optional<User> delete(UUID id);
 }
